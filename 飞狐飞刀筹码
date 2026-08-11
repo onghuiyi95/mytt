@@ -1,0 +1,7 @@
+获利盘:ma(WINNER(CLOSE)*100,20),colorRed,linethick2;
+套牢盘:ma(100*(1-WINNER(C)),20),colorgreen,linethick2;
+浮筹筹码:ma((winner(c*1.1)-winner(c*0.9))/winner(hhv(h,0))*100,5),color0050ff,linethick1;
+底线:20;
+顶线:80;
+DRAWICON((套牢盘>80 and 浮筹筹码<20),low,1),colorred;
+DRAWICON((获利盘>80 and 浮筹筹码<20),HIgh,2),colorred;
