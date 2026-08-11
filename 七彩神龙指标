@@ -1,0 +1,21 @@
+获利筹码:=WINNER(CLOSE*0.9)*100,COLORRED;
+浮筹:=(WINNER(CLOSE*1.1)-WINNER(CLOSE*0.9)/WINNER(HHV(HIGH,0)))*100,COLORYELLOW;
+套牢筹码:=100-浮筹-获利筹码,COLORGREEN;
+套:STICKLINE(套牢筹码>0.1,浮筹+获利筹码,100,4,0),COLORGREEN;
+浮:STICKLINE(浮筹,获利筹码,浮筹+获利筹码,4,0),COLORYELLOW;
+获:STICKLINE(获利筹码,0,获利筹码,4,0),COLORBROWN;
+
+Z20:20,COLORGRAY;
+Z50:50,COLORGRAY;
+Z80:80,COLORGRAY;
+
+CA:WINNER(CLOSE)*100;
+AC:EMA(CA,5),COLORMAGENTA;
+AC2:EMA(CA,20),COLORMAGENTA;
+DRAWBAND(AC,RGB(255,50,111),AC2,RGB(0,111,111));
+
+CA1:WINNER(CLOSE)*100,COLORRED,DOTLINE;
+
+{利用  弘历七彩神龙指标 的三色为背景，叠加了获利c值，及5-20色带。     20以下为超卖区，20-50为横盘区，50以上为强区，80以上为超买区}
+{本文为理想论坛博主「dbemail」的帖子，转载请注明出处。
+原文链接: https://www.55188.com/forum.php?mod=viewthread&tid=18136149}
