@@ -1,0 +1,10 @@
+M 2  100  5
+N 2  100  13
+上涨动力1:=SUM(ADVANCE-DECLINE,0);
+短线趋势:MA(ADL,M),COLORWHITE,LINETHICK2;
+中线趋势:MA(ADL,N),COLORLIMAGENTA,LINETHICK2;
+STICKLINE(短线趋势>中线趋势,短线趋势,中线趋势,1,0),COLORMAGENTA;
+STICKLINE(短线趋势<中线趋势,短线趋势,中线趋势,1,0),COLORGREEN;
+多空雷达:SUM(ADVANCE-DECLINE,0),COLORYELLOW,LINETHICK1;
+{本文为理想论坛博主「张明敏」的帖子，转载请注明出处。
+原文链接: https://www.55188.com/thread-4911586-1-1.html}
